@@ -1,0 +1,15 @@
+public class ques7 {
+    public static void main(String[] args) {
+        String sentence = "A batman with bat";
+        String oldSubstring = "bat";
+        String newSubstring = "snow";
+
+        String newSentence = replaceSubstring(sentence, oldSubstring, 
+		System.out.println("Original sentence: " + sentence);
+        System.out.println("New sentence: " + newSentence);
+    }
+
+    public static String replaceSubstring(String sentence, String oldSubstring, String newSubstring) {
+        return sentence.replace(oldSubstring, newSubstring);
+    }
+}

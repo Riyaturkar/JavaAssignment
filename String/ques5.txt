@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class ques5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String input = scanner.nextLine();
+
+        String output = findAndReplacePalindromes(input);
+        System.out.println("Output: " + output);
+    }
+
+    public static String findAndReplacePalindromes(String str) {
+        StringBuilder output = new StringBuilder();
+
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j <= str.length(); j++) {
+                String substr = str.substring(i, j);
+				if (isPalindrome(substr)) {
+                    for (int k = 0; k < substr.length(); k++) {
+                        output.append("*");
+                    }
+                } else {
+                    output.append(substr.charAt(0));
+                }
+            }
+        }
+		return output.toString();
+    }
+
+    public static boolean isPalindrome(String str) {
+        int i = 0, j = str.length() - 1;
+
+        while (i < j) {
+            if (str.charAt(i) != str.charAt(j)) {
+                return false;
+            }
+			i++;
+            j--;
+        }
+
+        return true;
+    }
+}

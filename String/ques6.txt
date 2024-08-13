@@ -1,0 +1,24 @@
+public class ques6 {
+    public static void main(String[] args) {
+        // Create an array of friend names
+        String[] friends = {"John", "Alice", "Bob", "Eve", "Mike", "Emma", "David", "Hannah", "Oliver", "George"};
+
+        // Sort the array in alphabetical order
+        for (int i = 0; i < friends.length; i++) {
+            for (int j = i + 1; j < friends.length; j++) {
+                if (friends[i].compareTo(friends[j]) > 0) {
+                    // Swap the elements
+                        String temp = friends[i];
+                    friends[i] = friends[j];
+                    friends[j] = temp;
+                }
+            }
+        }
+
+        // Print the sorted array
+        System.out.println("Sorted array of friend names:");
+        for (String friend : friends) {
+		System.out.println(friend);
+        }
+    }
+}
